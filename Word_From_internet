@@ -1,0 +1,9 @@
+# to read the word from any websites###
+from urllib.request import urlopen
+with urlopen('https://unifiedportal-mem.epfindia.gov.in/memberinterface/') as story_line:
+    #creating the array for store the word
+    story_words = []
+    for line in story_line:   # looping for all the word in currentline
+        line_words=line.decode('utf-8').split()  # decoding the word into utf-8 format and splited into words
+        for word in line_words:
+            story_words.append(word)  ##adding the words in to array story_words
